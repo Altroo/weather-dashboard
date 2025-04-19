@@ -29,7 +29,7 @@ Install the required packages using npm:
 
 Create a `.env` file in the root directory and add your API configuration:
 
-Replace `your_api_key_here` with your actual API key. Adjust the API endpoints if you decide to use a different public API.
+I've provided a free API key to use for this project. Adjust the API endpoints if you decide to use a different public API.
 
 ### 4. Run the Application
 
