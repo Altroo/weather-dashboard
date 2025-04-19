@@ -1,0 +1,61 @@
+.app-container
+  max-width: 800px
+  margin: 0 auto
+  padding: 1rem
+
+header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  h1
+    margin: 20px
+
+.search-bar
+  display: flex
+  margin-top: 1rem
+
+  input
+    flex: 1
+    padding: 0.5rem
+    font-size: 1rem
+
+  button
+    padding: 0.5rem 1rem
+    font-size: 1rem
+
+.current-weather,
+.forecast
+  margin-top: 2rem
+
+.error-message
+  color: red
+
+.forecast-items
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+
+  .forecast-item
+    flex: 1 1 calc(20% - 1rem)
+    border: 1px solid #ccc
+    padding: 0.5rem
+    text-align: center
+    min-width: 120px
+
+/* Responsive styles */
+header
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  @media (max-width: 600px)
+    flex-direction: column
+    align-items: flex-start
+    gap: 1rem
+
+@media (max-width: 768px)
+.forecast-items
+  flex-direction: column
+
+.forecast-item
+  flex: 1 1 100%
