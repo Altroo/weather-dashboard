@@ -1,5 +1,14 @@
 import React from 'react';
 
+/**
+ * Represents the weather forecast for a single day.
+ *
+ * @interface ForecastDay
+ * @property {string} date - The date of the forecast in ISO format (yyyy-mm-dd).
+ * @property {number} maxTemp - The maximum temperature forecasted for the day.
+ * @property {number} minTemp - The minimum temperature forecasted for the day.
+ * @property {string} condition - A brief description of the weather condition (e.g., sunny, rainy, cloudy).
+ */
 interface ForecastDay {
   date: string;
   maxTemp: number;
@@ -7,11 +16,28 @@ interface ForecastDay {
   condition: string;
 }
 
+/**
+ * Represents the properties for a weather forecast component.
+ *
+ * @interface ForecastProps
+ *
+ * @property {ForecastDay[]} data - An array of forecast data representing weather conditions for each day.
+ * @property {'metric' | 'imperial'} unit - The unit system for representing weather data. Possible values are "metric" for Celsius and "imperial" for Fahrenheit.
+ */
 interface ForecastProps {
   data: ForecastDay[];
   unit: 'metric' | 'imperial';
 }
 
+/**
+ * Returns an SVG icon representing a weather condition.
+ *
+ * @param {string} condition - A string describing the weather condition (e.g., "sunny", "rain", etc.).
+ * @returns {JSX.Element} An SVG element corresponding to the specified weather condition:
+ * - A sun icon for sunny conditions.
+ * - A cloud with raindrops icon for rainy conditions.
+ * - A default gray circle icon for unknown conditions.
+ */
 const getWeatherIcon = (condition: string) => {
   const lower = condition.toLowerCase();
   if (lower.includes('sunny')) {
@@ -48,6 +74,15 @@ const getWeatherIcon = (condition: string) => {
   }
 };
 
+/**
+ * A React functional component that displays a 5-day weather forecast.
+ *
+ * @component
+ * @param {Object} props - The props object for the Forecast component.
+ * @param {Array<Object>} props.data - An array of forecast data for multiple days. Each item represents a day's weather details such as date, condition, max temperature, and min temperature.
+ * @param {string} props.unit - A string representing the temperature unit, either "metric" for Celsius or any other value (e.g., "imperial") for Fahrenheit.
+ * @returns {JSX.Element|null} The rendered forecast component if data is provided and not empty, otherwise null.
+ */
 const Forecast: React.FC<ForecastProps> = ({ data, unit }) => {
   if (!data || data.length === 0) return null;
 
