@@ -1,10 +1,11 @@
 import React from 'react';
+import { TemperatureUnit } from '../types/weather';
 
 /**
  * Represents the properties for a unit toggle component.
  */
 interface UnitToggleProps {
-  unit: 'metric' | 'imperial';
+  unit: TemperatureUnit;
   toggleUnit: () => void;
 }
 

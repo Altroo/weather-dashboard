@@ -1,20 +1,5 @@
 import React from 'react';
-
-/**
- * Represents the weather forecast for a single day.
- *
- * @interface ForecastDay
- * @property {string} date - The date of the forecast in ISO format (yyyy-mm-dd).
- * @property {number} maxTemp - The maximum temperature forecasted for the day.
- * @property {number} minTemp - The minimum temperature forecasted for the day.
- * @property {string} condition - A brief description of the weather condition (e.g., sunny, rainy, cloudy).
- */
-interface ForecastDay {
-  date: string;
-  maxTemp: number;
-  minTemp: number;
-  condition: string;
-}
+import { ForecastDay, TemperatureUnit } from '../types/weather';
 
 /**
  * Represents the properties for a weather forecast component.
@@ -22,11 +7,11 @@ interface ForecastDay {
  * @interface ForecastProps
  *
  * @property {ForecastDay[]} data - An array of forecast data representing weather conditions for each day.
- * @property {'metric' | 'imperial'} unit - The unit system for representing weather data. Possible values are "metric" for Celsius and "imperial" for Fahrenheit.
+ * @property {TemperatureUnit} unit - The unit system for representing weather data. Possible values are "metric" for Celsius and "imperial" for Fahrenheit.
  */
 interface ForecastProps {
   data: ForecastDay[];
-  unit: 'metric' | 'imperial';
+  unit: TemperatureUnit;
 }
 
 /**

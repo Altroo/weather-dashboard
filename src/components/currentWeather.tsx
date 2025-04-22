@@ -1,16 +1,17 @@
 import React from 'react';
+import { WeatherData, TemperatureUnit } from '../types/weather';
 
 /**
  * Interface representing the properties for the CurrentWeather component.
  *
  * @interface CurrentWeatherProps
- * @property {any} data - The weather data to be displayed, typically obtained from a weather API.
- * @property {'metric'|'imperial'} unit - The unit system used for displaying weather information.
- *                                         'metric' for Celsius and 'imperial' for Fahrenheit.
+ * @property {WeatherData} data - The weather data to be displayed, typically obtained from a weather API.
+ * @property {TemperatureUnit} unit - The unit system used for displaying weather information.
+ *                                    'metric' for Celsius and 'imperial' for Fahrenheit.
  */
 interface CurrentWeatherProps {
-  data: any;
-  unit: 'metric' | 'imperial';
+  data: WeatherData;
+  unit: TemperatureUnit;
 }
 
 /**
