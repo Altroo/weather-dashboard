@@ -39,18 +39,24 @@ This will start the application and typically open it in your default browser at
 
 ## Project Structure
 
-- `src/App.tsx` - Main application component handling API integration, state management, and layout.
+- `src/App.tsx` - Main application component that displays the city name in the header and renders the weather components.
 - `src/components/`
     - `CurrentWeather.tsx` - Displays current weather details.
     - `Forecast.tsx` - Renders a 5-day forecast with daily weather conditions.
     - `SearchBar.tsx` - Provides the location search functionality.
     - `UnitToggle.tsx` - Allows users to switch between metric and imperial units.
+- `src/context/`
+    - `WeatherContext.tsx` - Provides a context for weather data and functions to be used throughout the application.
+- `src/services/`
+    - `weatherService.ts` - Handles API integration and data fetching.
+- `src/types/`
+    - `weather.ts` - Contains TypeScript interfaces for weather data.
 - `src/App.sass` - Contains styling, including responsive adjustments for the header and other components.
 
 ## Usage
 
 1. **Search for a Location:**  
-   Enter a city name in the search bar to view the corresponding weather data.
+   Enter a city name in the search bar to view the corresponding weather data. The city name will be displayed in the header.
 2. **Switch Units:**  
    Use the unit toggle button in the header to switch between metric and imperial measurements.
 3. **Responsive Design:**  
